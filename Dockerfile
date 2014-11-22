@@ -7,17 +7,13 @@ FROM phusion/baseimage:0.9.15
 
 MAINTAINER m.maatkamp@gmail.com version: 0.1
 
-RUN apt-get update
-RUN apt-get dist-upgrade -yf
-RUN apt-get clean
-RUN apt-get autoremove
-
+RUN apt-get update && apt-get dist-upgrade -yf && apt-get clean && apt-get autoremove
 RUN apt-get install -y git subversion axel wget zip unzip 
 
 # --- 
 # GNURadio 
 
-RUN wget http://www.sbrac.org/files/build-gnuradio && chmod a+x ./build-gnuradio && printf "y\ny\ny\n" | ./build-gnuradio
+RUN axel http://www.sbrac.org/files/build-gnuradio && chmod a+x ./build-gnuradio && printf "y\ny\ny\n" | ./build-gnuradio -j4
 RUN echo "export PYTHONPATH=/usr/local/lib/python2.7/dist-packages" > ~/.bashrc
 
 WORKDIR         /
