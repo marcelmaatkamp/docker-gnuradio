@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM phusion/baseimage-docker:latest 
 
 MAINTAINER m.maatkamp@gmail.com version: 0.1
 
