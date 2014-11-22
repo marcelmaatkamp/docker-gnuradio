@@ -12,11 +12,12 @@ RUN apt-get install -y git subversion axel wget zip unzip
 # --- 
 # GNURadio 
 RUN wget http://www.sbrac.org/files/build-gnuradio && chmod a+x ./build-gnuradio && printf "y\ny\ny\n" | ./build-gnuradio
-RUN "export PYTHONPATH=/usr/local/lib/python2.7/dist-packages" > ~/.bashrc
+RUN echo "export PYTHONPATH=/usr/local/lib/python2.7/dist-packages" > ~/.bashrc
 
 # ---
 # MultiMode
-RUN svn co https://www.cgran.org/svn/projects/multimode
+RUN svn ls --config-option config:auth:store-auth-creds=yes https://www.cgran.org/svn/projects/multimode 
+RUN svn co --trust-server-cert --non-interactive https://www.cgran.org/svn/projects/multimode
 RUN cd multimode/trunk && make install
 
 # ---
