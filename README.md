@@ -13,6 +13,7 @@ This is a Dockerfile for building GNURadio 3.7.1 and its modules:
 **BUILD**
 
 To build an image with this file simply use:
+
     $ git clone https://github.com/marcelmaatkamp/docker-gnuradio.git
     $ cd docker-gnuradio 
     $ docker build -t marcelmaatkamp/gnuradio .
