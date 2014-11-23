@@ -13,8 +13,10 @@ RUN apt-get install -y git subversion axel wget zip unzip
 # --- 
 # GNURadio 
 
+RUN mkdir /gnuradio
+WORKDIRK /gnuradio
+
 RUN axel http://www.sbrac.org/files/build-gnuradio && chmod a+x ./build-gnuradio && printf "y\ny\ny\ny\n" | ./build-gnuradio -ja
 RUN echo "export PYTHONPATH=/usr/local/lib/python2.7/dist-packages" > ~/.bashrc
 
-WORKDIR         /
 ENTRYPOINT      ["/bin/bash"]
