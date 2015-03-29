@@ -8,7 +8,12 @@ FROM phusion/baseimage:0.9.15
 MAINTAINER m.maatkamp@gmail.com version: 0.1
 
 RUN apt-get update && apt-get dist-upgrade -yf && apt-get clean && apt-get autoremove
-RUN apt-get install -y git subversion axel wget zip unzip cmake build-essential
+RUN apt-get install -y git subversion axel wget zip unzip \
+cmake build-essential git-core cmake g++ python-dev swigpkg-config \
+libfftw3-dev libboost1.55-all-dev libcppunit-dev libgsl0-dev libusb-dev \
+libsdl1.2-dev python-wxgtk2.8 python-numpy python-cheetah python-lxml doxygen \
+libxi-dev python-sip libqt4-opengl-dev libqwt-dev libfontconfig1-dev \
+libxrender-dev python-sip python-sip-dev
 
 # --- 
 # GNURadio 
