@@ -13,7 +13,7 @@ cmake build-essential git-core cmake g++ python-dev swig pkg-config \
 libfftw3-dev libboost1.55-all-dev libcppunit-dev libgsl0-dev libusb-dev \
 libsdl1.2-dev python-wxgtk2.8 python-numpy python-cheetah python-lxml doxygen \
 libxi-dev python-sip libqt4-opengl-dev libqwt-dev libfontconfig1-dev \
-libxrender-dev python-sip python-sip-dev
+libxrender-dev python-sip python-sip-dev libusb-1.0
 
 # --- 
 # GNURadio 
