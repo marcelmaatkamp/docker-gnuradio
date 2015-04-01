@@ -26,3 +26,14 @@ A pre-build image of this dockerfile can be found at https://registry.hub.docker
    
     $ docker pull marcelmaatkamp/gnuradio
     $ docker run -t -i --privileged -v /dev/bus/usb:/dev/bus/usb marcelmaatkamp/gnuradio /bin/bash
+
+**Examples**
+
+Run rtl_tcp over your network:
+```
+$ docker run -ti \
+  --privileged \
+  --entrypoint=rtl_tcp \
+  -p 1234:1234 \
+  marcelmaatkamp/gnuradio:3.7.1 -a 0.0.0.0
+```
